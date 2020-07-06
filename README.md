@@ -10,14 +10,16 @@
 
 # Adicionar seu Banco de dados Firebase Firestore
 	Crie o projeto no firebase
-	Adicione um aplicativo da web, de um nome exemplo SMS.
-	Copie as credenciais do firebase e altere em \SMS\src\back-end\firebase.js
+	Adicione um aplicativo da web no Firebase, de um nome exemplo SMS.
+	Copie as credenciais geradas pelo firebase e altere em 
+		\src\back-end\firebase.js
 
 
 # Adicione o TOKEN da TotalVoice
 	Crie uma conta na TotalVoice
 	Gere o Token de acesso e copie.
-	Cole o Token em /functions/index.js
+	Cole o Token em 
+		/functions/index.js
 		em const client
 
 # Envie a function sendSMS para o Firebase Functions
