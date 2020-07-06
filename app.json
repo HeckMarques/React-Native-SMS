@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "WorkReminder",
-    "slug": "WorkReminder",
+    "name": "React-SMS",
+    "slug": "React-SMS",
     "platforms": [
       "ios",
       "android",

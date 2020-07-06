@@ -2,13 +2,13 @@ import * as firebase from "firebase"
 import firestore from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAg4OFWm5gKuvlS5EkjZsA_bCS0mSlrBOc",
-    authDomain: "universidade-nmurfk.firebaseapp.com",
-    databaseURL: "https://universidade-nmurfk.firebaseio.com",
-    projectId: "universidade-nmurfk",
-    storageBucket: "universidade-nmurfk.appspot.com",
-    messagingSenderId: "779613761092",
-    appId: "1:779613761092:web:56445ee76914ed623dd611"
+    apiKey: "AIzaSyAJ2auv2Qff10VNltdQ7JB8KZkSCa00MpA",
+    authDomain: "sms-scheduler-e572e.firebaseapp.com",
+    databaseURL: "https://sms-scheduler-e572e.firebaseio.com",
+    projectId: "sms-scheduler-e572e",
+    storageBucket: "sms-scheduler-e572e.appspot.com",
+    messagingSenderId: "657957074757",
+    appId: "1:657957074757:web:9f1bf9c9d785f5ed87302c"
 };
 
 const firebaseApp = firebase.app.length > 0 ?

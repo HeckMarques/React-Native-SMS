@@ -1,42 +1,33 @@
 import { db } from '../back-end/firebase'
 import { firebase } from '../back-end/firebase'
 
-export const saveWork = (trabalho, chave) => {
 
-    if (chave === "") {
-        return new Promise((resolve, reject) => {
-            db.collection(`users`).doc(firebase.auth().currentUser.uid).
-                collection('contato')
-                .add(trabalho)
-                .then(result => resolve(result.id))
-                .catch(erro => reject(erro))
-        })
-    } else {
-        return new Promise((resolve, reject) => {
-            db.collection(`users`).doc(firebase.auth().currentUser.uid).
-                collection('contato')
-                .doc(chave)
-                .update(trabalho)
-                .then(() => resolve())
-                .catch(erro => reject(erro))
-        })
-    }
+
+export const saveSMS = (trabalho) => {
+    return new Promise((resolve, reject) => {
+        db.collection(`users`).doc(firebase.auth().currentUser.uid).
+        collection('sms')
+            .add(trabalho)
+            .then(result => resolve(result.id))
+            .catch(erro => reject(erro))
+    })
 }
 
-export const saveEmail = (email) => {
+
+export const updateSMSid = (id) => {
     return new Promise((resolve, reject) => {
-        db.collection(`users`).doc(firebase.auth().currentUser.uid)
-            .set({ email: email, key: firebase.auth().currentUser.uid })
+        db.collection(`users`).doc(firebase.auth().currentUser.uid).
+            collection('sms')
+            .doc(id).update({key: id})
             .then(result => resolve())
             .catch(erro => reject(erro))
     })
-
 }
 
-export const deleteWork = (work) => {
+export const deleteSMS = (work) => {
     return new Promise((resolve, reject) => {
         db.collection(`users`).doc(firebase.auth().currentUser.uid).
-            collection('contato')
+        collection('sms')
             .doc(work.key)
             .delete()
             .then(() => resolve())
@@ -44,10 +35,10 @@ export const deleteWork = (work) => {
     })
 }
 
-export const getWorks = () => {
+export const getSMS = () => {
     return new Promise((resolve, reject) => {
         db.collection(`users`).doc(firebase.auth().currentUser.uid).
-            collection('contato')
+        collection('sms')
             .get()
             .then(snapchot => {
                 let worksLista = []
